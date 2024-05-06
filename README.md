@@ -1,1 +1,0 @@
-# good_tranpotation_app
