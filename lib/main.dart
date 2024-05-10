@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:good_tranpotation_app/auth_module/splash.dart';
+import './Screen/splash.dart';
 
 void main() {
   runApp(const MyApp());

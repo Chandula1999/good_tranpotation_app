@@ -7,13 +7,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:good_tranpotation_app/main.dart';
+import 'package:good_tranpotation_app/main.dart'; // Import the file that contains the MyApp class
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester
+        .pumpWidget(const MyApp()); // Replace MyApp with the correct class name
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
