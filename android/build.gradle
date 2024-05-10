@@ -1,4 +1,5 @@
 allprojects {
+    ext.java_version = '21'
     repositories {
         google()
         mavenCentral()
@@ -8,7 +9,10 @@ allprojects {
 rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
+    tasks.withType (JavaCompile) {
+sourceCompatibility = JavaVersion.VERSION_21
+targetCompatibility = JavaVersion.VERSION_21
+}}
 subprojects {
     project.evaluationDependsOn(':app')
 }
