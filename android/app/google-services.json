@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "486610915574",
+    "project_id": "good-transportation-app-8d9f1",
+    "storage_bucket": "good-transportation-app-8d9f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486610915574:android:f9ef87ce4027c71d2b5cd7",
+        "android_client_info": {
+          "package_name": "com.example.good_tranpotation_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApVDgAp0YVPif44jT9mIHc_B87v6UvwZw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
