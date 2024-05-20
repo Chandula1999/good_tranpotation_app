@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:good_tranpotation_app/Components/auth_page.dart';
 import 'package:good_tranpotation_app/firebase_options.dart';
-
-import './Screen/splash.dart';
+// import './Screen/splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: Authpage(),
     );
   }
 }

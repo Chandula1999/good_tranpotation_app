@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:good_tranpotation_app/Screen/pw_reset.dart';
@@ -5,9 +6,20 @@ import 'colors.dart'; // Your custom color definitions
 import 'home_page.dart'; // Import the HomePage Dart file
 import 'register_page.dart';
 
-
 class SignIn extends StatelessWidget {
-  const SignIn({super.key});
+  SignIn({super.key});
+
+  //text editing controllers
+  final usernamecontroller = TextEditingController();
+  final passwordcontrller = TextEditingController();
+
+  //sign user in method
+  void signUserIn() async{
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: usernamecontroller.text,
+      password: passwordcontrller.text,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +80,9 @@ class SignIn extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => PasswordReset(onPasswordReset: () {  },),
+                            builder: (context) => PasswordReset(
+                              onPasswordReset: () {},
+                            ),
                           ),
                         );
                       },
@@ -83,8 +97,7 @@ class SignIn extends StatelessWidget {
                       ),
                     ),
                   ),
-                  ),
-                
+                ),
                 SizedBox(height: size.height * 0.04),
                 _buildSignInButton(context, size),
                 SizedBox(height: size.height * 0.06),
@@ -102,6 +115,7 @@ class SignIn extends StatelessWidget {
   Widget _buildSignInButton(BuildContext context, Size size) {
     return GestureDetector(
       onTap: () {
+        signUserIn();
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -248,5 +262,3 @@ class SignIn extends StatelessWidget {
     );
   }
 }
-
-

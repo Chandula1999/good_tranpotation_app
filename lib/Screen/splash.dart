@@ -46,7 +46,7 @@ class SplashScreen extends StatelessWidget {
                 // You can navigate to another screen or perform any other action.
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SignIn()),
+                  MaterialPageRoute(builder: (context) => SignIn()),
                 );
               },
               child: const Text(
