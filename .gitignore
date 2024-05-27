@@ -47,3 +47,53 @@ app.*.map.json
 .vscode
 .dart_tool
 build
+
+
+
+# Flutter specific
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+build/
+.idea/
+android/.gradle/
+android/app/debug/
+android/app/profile/
+android/app/release/
+ios/Pods/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/ServiceDefinitions.json
+ios/Runner.xcworkspace/
+macos/Pods/
+macos/Flutter/ephemeral/
+windows/Flutter/ephemeral/
+linux/flutter/ephemeral/
+web/Flutter/ephemeral/
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*~
+*.swp
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+__MACOSX/
+
+# IDEs and editors
+.vscode/
+.history/
+.idea/
+*.iml
+*.sublime-workspace
+
+# Dependency directories
+.packages
+.pub/
