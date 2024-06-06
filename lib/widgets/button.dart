@@ -3,26 +3,21 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   final String buttonText;
   final Color buttonColor;
-  final Widget destination;
+
+  final Function() onTap;
 
   const CustomButton({
     super.key,
     required this.buttonText,
     required this.buttonColor,
-    required this.destination,
+    required this.onTap, 
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => destination,
-          ),
-        );
-      },
+
+      onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
         width: double.infinity,
@@ -43,4 +38,8 @@ class CustomButton extends StatelessWidget {
       ),
     );
   }
+
 }
+
+
+
