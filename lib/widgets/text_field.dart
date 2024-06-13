@@ -3,15 +3,17 @@ import 'package:flutter/material.dart';
 class MyTextField extends StatefulWidget {
   final String hint;
   final bool obscureText;
+  final TextEditingController controller;
 
   const MyTextField({
     super.key,
     required this.hint,
     this.obscureText = false,
+    required this.controller,
   });
 
   @override
-  _MyTextFieldState createState() => _MyTextFieldState();
+  State<MyTextField> createState() => _MyTextFieldState();
 }
 
 class _MyTextFieldState extends State<MyTextField> {
@@ -30,6 +32,13 @@ class _MyTextFieldState extends State<MyTextField> {
   }
 
   @override
+  void dispose() {
+    // Clean up the controller when the widget is removed from the widget tree.
+    widget.controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
@@ -37,6 +46,7 @@ class _MyTextFieldState extends State<MyTextField> {
         borderRadius: BorderRadius.circular(15),
       ),
       child: TextField(
+        controller: widget.controller,
         obscureText: _isObscured,
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(
@@ -70,3 +80,4 @@ class _MyTextFieldState extends State<MyTextField> {
     );
   }
 }
+
