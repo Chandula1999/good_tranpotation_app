@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:good_tranpotation_app/screens/Home%20page/App%20Bar/appbar.dart';
 import 'package:good_tranpotation_app/screens/Home%20page/widgets/ccurve%20edges/primary_header_container.dart';
 import 'package:good_tranpotation_app/screens/Home%20page/widgets/select_category_card.dart';
+import 'package:good_tranpotation_app/screens/Home%20page/widgets/text_field_2.dart';
 import 'package:good_tranpotation_app/utils/colors.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -89,6 +90,17 @@ class HomeScreen extends StatelessWidget {
                       color: textColor1,
                     ),
                   ),
+                  const SizedBox(height: 5,),
+                  const MyTextField2(hint: "Enter destination"),
+                  const SizedBox(height: 10,),
+                  ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                  "images/flyer.jpg",
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                ),
+              ),
                 ],
               ),
             )
