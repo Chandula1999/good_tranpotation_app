@@ -87,11 +87,11 @@ class _DriverDetailsSC1State extends State<DriverDetailsSC1> {
                   },
                 ),
                 // Add more TextFormFields for each field
-                CustomButton(
-                  buttonText: "Next",
-                  buttonColor: buttonColor,
-                  onTap: _uploadData,
-                ),
+                // CustomButton(
+                //   buttonText: "Next",
+                //   buttonColor: buttonColor,
+                  // onTap:(),
+                // ),
                 // ... other widgets
               ],
             ),
