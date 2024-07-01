@@ -30,10 +30,10 @@
 //       User newUser = User(
 //         userId: 'user123',
 //         name: 'John Doe',
-//         email: 'johndoe@example.com', 
-//         phoneNumber: '076965656', 
+//         email: 'johndoe@example.com',
+//         phoneNumber: '076965656',
 //         userType: 'driver',
-        
+
 //         // Add other fields as per your User model
 //       );
 

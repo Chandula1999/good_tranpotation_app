@@ -9,6 +9,7 @@ class Shipment {
   final Map<String, dynamic> shipmentDetails;
   final String status;
   final double priceEstimate;
+  final bool ecoFriendly;
   final Timestamp createdAt;
   final Timestamp updatedAt;
 
@@ -21,6 +22,7 @@ class Shipment {
     required this.shipmentDetails,
     required this.status,
     required this.priceEstimate,
+    required this.ecoFriendly,
     required this.createdAt,
     required this.updatedAt,
   });
@@ -36,6 +38,7 @@ class Shipment {
       'shipmentDetails': shipmentDetails,
       'status': status,
       'priceEstimate': priceEstimate,
+      'ecoFriendly' : ecoFriendly,
       'createdAt': createdAt,
       'updatedAt': updatedAt,
     };
@@ -52,6 +55,7 @@ class Shipment {
       shipmentDetails: map['shipmentDetails'],
       status: map['status'],
       priceEstimate: map['priceEstimate'],
+      ecoFriendly: map['ecoFriendly'],
       createdAt: map['createdAt'],
       updatedAt: map['updatedAt'],
     );

@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'package:good_tranpotation_app/widgets/button.dart';
 import 'package:good_tranpotation_app/widgets/click_link.dart';
 
@@ -88,6 +87,8 @@ class _MyTextFieldState extends State<MyTextField> {
 }
 
 class MyForm extends StatefulWidget {
+  const MyForm({super.key});
+
   @override
   _MyFormState createState() => _MyFormState();
 }
@@ -121,7 +122,7 @@ class _MyFormState extends State<MyForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Form'),
+        title: const Text('My Form'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -143,7 +144,7 @@ class _MyFormState extends State<MyForm> {
               onTap: _submitData,
             ),
             const SizedBox(height: 20),
-            ClickableLink(
+            const ClickableLink(
               prefixText: 'Already have an account? ',
               linkText: 'Login here',
               destination: LoginPage(), // Assuming LoginPage is defined
@@ -157,6 +158,8 @@ class _MyFormState extends State<MyForm> {
 
 // Placeholder for the LoginPage widget
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
