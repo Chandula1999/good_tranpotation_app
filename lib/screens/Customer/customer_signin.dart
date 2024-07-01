@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:good_tranpotation_app/screens/Customer/customer_register.dart';
+import 'package:good_tranpotation_app/screens/Home%20page/home_screen.dart';
 import 'package:good_tranpotation_app/screens/forgot%20Password.dart';
-import 'package:good_tranpotation_app/screens/home_page.dart';
 import 'package:good_tranpotation_app/utils/colors.dart';
 import 'package:good_tranpotation_app/widgets/back_arrow_button.dart';
 import 'package:good_tranpotation_app/widgets/button.dart';
@@ -76,7 +76,7 @@ class _CustomerSignInState extends State<CustomerSignIn> {
         // Navigate to homepage
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const HomePage()),
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
         );
       }
     } on FirebaseAuthException catch (e) {
