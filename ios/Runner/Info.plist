@@ -45,5 +45,8 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<string>Main</string>
+	<key>UISupportedInterfaceOrientations</key>
+
 </dict>
 </plist>
