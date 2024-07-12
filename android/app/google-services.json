@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "606449714600",
+    "project_id": "good-trans-app",
+    "storage_bucket": "good-trans-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606449714600:android:5f77e35d8d0f23a363499d",
+        "android_client_info": {
+          "package_name": "com.example.good_tranpotation_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyp1GStI37UkmqEXihofZbTXlII_-WG-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

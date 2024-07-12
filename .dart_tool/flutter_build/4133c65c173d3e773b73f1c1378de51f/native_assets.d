@@ -1,0 +1,1 @@
+ D:\\Project\ 2_2\\good_tranpotation_app\\.dart_tool\\flutter_build\\4133c65c173d3e773b73f1c1378de51f\\native_assets.yaml: 

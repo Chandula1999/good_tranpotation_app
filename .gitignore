@@ -1,0 +1,53 @@
+# Dependency directories
+.dart_tool/
+.pub-cache/
+.pub/
+
+# Build outputs
+build/
+/build/
+# Flutter specific
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# IDE specific
+.idea/
+.vscode/
+*.iml
+
+# Operating system files
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# Temporary files
+*.swp
+*.bak
+*.tmp
+*.temp
+
+# Local configuration files
+android/local.properties
+android/key.properties
+
+# Generated files
+android/app/src/main/gen/
+android/app/src/profile/gen/
+android/app/src/debug/gen/
+
+# Gradle files
+.gradle/
+gradlew
+gradlew.bat
+gradle-wrapper.jar
+
+# iOS specific
+ios/Flutter/.last_build_id
+ios/.generated/
+ios/Flutter/Flutter.framework/
+ios/Flutter/Flutter.podspec
+
+# Miscellaneous files
+*.class
+*.log
+*.pyc
+*.jar
