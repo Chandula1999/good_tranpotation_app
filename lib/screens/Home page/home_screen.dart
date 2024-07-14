@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:good_tranpotation_app/screens/Home%20page/App%20Bar/appbar.dart';
+import 'package:good_tranpotation_app/screens/Home%20page/trip_details.dart';
 import 'package:good_tranpotation_app/screens/Home%20page/widgets/ccurve%20edges/primary_header_container.dart';
 import 'package:good_tranpotation_app/screens/Home%20page/widgets/select_category_card.dart';
-import 'package:good_tranpotation_app/screens/Home%20page/widgets/text_field_2.dart';
 import 'package:good_tranpotation_app/utils/colors.dart';
+import 'package:good_tranpotation_app/widgets/button_3.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,20 +15,26 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-             const PrimaryHeaderContainer(
-              child: Column(children: [
-                TAppBar(title: Column(
-                  children: [
-                    Text("Good day for Shipping",style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),),
-                    Text("Nirmitha Heshara"),
-
-                ],),)
-              ],)
-            ),
+            const PrimaryHeaderContainer(
+                child: Column(
+              children: [
+                TAppBar(
+                  title: Column(
+                    children: [
+                      Text(
+                        "Good day for Shipping",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text("Nirmitha Heshara"),
+                    ],
+                  ),
+                )
+              ],
+            )),
             const SizedBox(
               height: 10,
             ),
@@ -90,17 +97,25 @@ class HomeScreen extends StatelessWidget {
                       color: textColor1,
                     ),
                   ),
-                  const SizedBox(height: 5,),
-                  const MyTextField2(hint: "Enter destination"),
-                  const SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  CustomButton_3(
+                      buttonText: "Take A Trip",
+                      buttonColor: Colors.blue,
+                      destination: TripDetails()),
+                  //CustomButton(buttonText: "Make a Trip", buttonColor: Colors.blue, onTap: const TripDetails(),),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                  "images/flyer.jpg",
-                  fit: BoxFit.cover,
-                  width: double.infinity,
-                ),
-              ),
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      "images/flyer.jpg",
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                    ),
+                  ),
                 ],
               ),
             )
@@ -110,4 +125,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
