@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:good_tranpotation_app/screens/Driver/driver_details_sc2.dart';
-import 'package:good_tranpotation_app/screens/Driver/driver_signin.dart';
 import 'package:good_tranpotation_app/utils/colors.dart';
 import 'package:good_tranpotation_app/widgets/back_arrow_button.dart';
-import 'package:good_tranpotation_app/widgets/button.dart';
-import 'package:good_tranpotation_app/widgets/click_link.dart';
 
 class DriverDetailsSC1 extends StatefulWidget {
   const DriverDetailsSC1({super.key});

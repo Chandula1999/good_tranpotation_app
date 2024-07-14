@@ -74,6 +74,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "file",
+      "rootUri": "file:///C:/Users/Chand/AppData/Local/Pub/Cache/hosted/pub.dev/file-7.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "firebase_auth",
       "rootUri": "file:///C:/Users/Nirmitha/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_auth-5.1.1",
       "packageUri": "lib/",
@@ -134,6 +140,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "flutter_driver",
+      "rootUri": "file:///C:/Development/flutter/packages/flutter_driver",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///C:/Users/Nirmitha/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-4.0.0",
       "packageUri": "lib/",
@@ -158,6 +170,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "fuchsia_remote_debug_protocol",
+      "rootUri": "file:///C:/Development/flutter/packages/fuchsia_remote_debug_protocol",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "get",
       "rootUri": "file:///C:/Users/Nirmitha/AppData/Local/Pub/Cache/hosted/pub.dev/get-4.6.6",
       "packageUri": "lib/",
@@ -166,10 +184,16 @@
     {
       "name": "google_maps",
       "rootUri": "file:///C:/Users/Nirmitha/AppData/Local/Pub/Cache/hosted/pub.dev/google_maps-7.1.0",
+
+      "name": "http",
+      "rootUri": "file:///C:/Users/Chand/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.2.1",
+
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
+    
     {
+
       "name": "google_maps_flutter",
       "rootUri": "file:///C:/Users/Nirmitha/AppData/Local/Pub/Cache/hosted/pub.dev/google_maps_flutter-2.7.0",
       "packageUri": "lib/",
@@ -206,6 +230,7 @@
       "languageVersion": "2.19"
     },
     {
+
       "name": "http_parser",
       "rootUri": "file:///C:/Users/Nirmitha/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.0.2",
       "packageUri": "lib/",
@@ -228,6 +253,12 @@
       "rootUri": "file:///C:/Users/Nirmitha/AppData/Local/Pub/Cache/hosted/pub.dev/js_wrapping-0.7.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "integration_test",
+      "rootUri": "file:///C:/Development/flutter/packages/integration_test",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
     },
     {
       "name": "leak_tracker",
@@ -302,8 +333,20 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "platform",
+      "rootUri": "file:///C:/Users/Chand/AppData/Local/Pub/Cache/hosted/pub.dev/platform-3.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "plugin_platform_interface",
       "rootUri": "file:///C:/Users/Nirmitha/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.8",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "process",
+      "rootUri": "file:///C:/Users/Chand/AppData/Local/Pub/Cache/hosted/pub.dev/process-5.0.2",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -356,6 +399,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "sync_http",
+      "rootUri": "file:///C:/Users/Chand/AppData/Local/Pub/Cache/hosted/pub.dev/sync_http-0.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "term_glyph",
       "rootUri": "file:///C:/Users/Nirmitha/AppData/Local/Pub/Cache/hosted/pub.dev/term_glyph-1.2.1",
       "packageUri": "lib/",
@@ -392,13 +441,21 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "webdriver",
+      "rootUri": "file:///C:/Users/Chand/AppData/Local/Pub/Cache/hosted/pub.dev/webdriver-3.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "good_tranpotation_app",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-07-14T13:21:22.695074Z",
+
+  "generated": "2024-07-01T19:40:30.807975Z",
+
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///C:/src/flutter",

@@ -190,7 +190,7 @@ class _CustomerSignInState extends State<CustomerSignIn> {
               SizedBox(height: size.height * 0.06),
               const SocialLogin(),
               SizedBox(height: size.height * 0.06),
-              ClickableLink(
+              const ClickableLink(
                   prefixText: "Not a member? ",
                   linkText: "Register now",
                   destination: CustomerRegistrationPage())
