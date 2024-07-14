@@ -48,7 +48,11 @@ dependencies:
   provider: ^6.1.2
   get: ^4.6.6
   iconsax: ^0.0.8
+
+  location: ^7.0.0
+  google_maps_flutter: ^2.7.0
   http: ^1.2.1
+
 
 
 dev_dependencies:
