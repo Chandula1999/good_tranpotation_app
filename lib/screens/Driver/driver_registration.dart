@@ -81,7 +81,7 @@ class _DriverRegistrationState extends State<DriverRegistration> {
         // Navigate to Driver Details Screen
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const DriverDetailsSC1()),
+          MaterialPageRoute(builder: (context) => DriverRegisterScreen2()),
         );
       }
     } on FirebaseAuthException catch (e) {
