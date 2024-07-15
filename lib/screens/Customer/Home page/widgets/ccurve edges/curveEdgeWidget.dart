@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:good_tranpotation_app/screens/Home%20page/widgets/ccurve%20edges/curve_edges.dart';
+import 'package:good_tranpotation_app/screens/Customer/Home%20page/widgets/ccurve%20edges/curve_edges.dart';
 // import 'package:transportation_app/Screens/Home%20page/widgets/ccurve%20edges/circular_container.dart';
 // import 'package:transportation_app/utils/colors.dart';
 

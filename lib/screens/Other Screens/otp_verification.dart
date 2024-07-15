@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:good_tranpotation_app/screens/password_change_screen.dart';
+import 'package:good_tranpotation_app/screens/Other%20Screens/create_new_password.dart';
+import 'package:good_tranpotation_app/screens/Other%20Screens/forgot%20Password.dart';
 import 'package:good_tranpotation_app/utils/colors.dart';
 import 'package:good_tranpotation_app/widgets/back_arrow_button.dart';
 import 'package:good_tranpotation_app/widgets/button.dart';
+import 'package:good_tranpotation_app/widgets/click_link.dart';
+import 'package:good_tranpotation_app/widgets/part_widgets.dart';
 
-class CreateNewPassword extends StatelessWidget {
-  const CreateNewPassword({super.key});
+class OtpVerification extends StatelessWidget {
+  const OtpVerification({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +38,7 @@ class CreateNewPassword extends StatelessWidget {
             children: [
               SizedBox(height: size.height * 0.01),
               Text(
-                "Create New Password",
+                "OTP Verification",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 37,
@@ -44,7 +47,7 @@ class CreateNewPassword extends StatelessWidget {
               ),
               SizedBox(height: size.height * 0.01),
               Text(
-                "Your new password must be unique from those previously used",
+                "Enter the verification code we just sent on your email Address",
                 //textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 16,
@@ -52,27 +55,28 @@ class CreateNewPassword extends StatelessWidget {
                 ),
               ),
               SizedBox(height: size.height * 0.03),
-              // const MyTextField(
-              //   hint: "New Password",
-              //   obscureText: true,
-              // ),
-              SizedBox(height: size.height * 0.01),
-              // const MyTextField(
-              //   hint: "Confirm Password",
-              //   obscureText: true,
-              // ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: List.generate(4, (index) => buildOtpBox()),
+              ),
               SizedBox(height: size.height * 0.03),
               CustomButton(
-                  buttonText: "Reset Password",
+                  buttonText: "Verify",
                   buttonColor: buttonColor,
                   onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const PasswordChanged(),
-                    ),
-                  )
-                  // destination: const PasswordChanged()
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CreateNewPassword()))
+                  // destination: const CreateNewPassword()
                   ),
+              const SizedBox(height: 40),
+              SizedBox(height: size.height * 0.40),
+              const Center(
+                child: ClickableLink(
+                    prefixText: "Didn't received code? ",
+                    linkText: "Resend",
+                    destination: ForgotPassword()),
+              )
             ],
           ),
         ),

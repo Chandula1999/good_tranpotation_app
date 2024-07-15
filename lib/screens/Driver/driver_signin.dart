@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:good_tranpotation_app/screens/Driver/driver_registration.dart';
-import 'package:good_tranpotation_app/screens/forgot%20Password.dart';
+import 'package:good_tranpotation_app/screens/Other%20Screens/forgot%20Password.dart';
 import 'package:good_tranpotation_app/utils/colors.dart';
 import 'package:good_tranpotation_app/widgets/back_arrow_button.dart';
 import 'package:good_tranpotation_app/widgets/button.dart';
@@ -9,7 +9,7 @@ import 'package:good_tranpotation_app/widgets/click_link.dart';
 import 'package:good_tranpotation_app/widgets/social_login.dart';
 import 'package:good_tranpotation_app/widgets/text_field.dart';
 
-import '../home_page.dart'; // HomePage Dart file
+import '../Other Screens/home_page.dart'; // HomePage Dart file
 
 class DriverSignIn extends StatefulWidget {
   const DriverSignIn({super.key});
