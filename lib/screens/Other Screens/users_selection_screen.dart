@@ -67,7 +67,7 @@ class UserSelection extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => CustomerRegistrationPage()),
+                          builder: (context) => const CustomerRegistrationPage()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

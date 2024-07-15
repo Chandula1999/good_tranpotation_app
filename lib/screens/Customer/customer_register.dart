@@ -9,12 +9,12 @@ import 'package:good_tranpotation_app/widgets/click_link.dart';
 import 'package:good_tranpotation_app/widgets/social_login.dart';
 import 'package:good_tranpotation_app/widgets/text_field.dart';
 
-
 class CustomerRegistrationPage extends StatefulWidget {
   const CustomerRegistrationPage({super.key});
 
   @override
-  State<CustomerRegistrationPage> createState() => _CustomerRegistrationPageState();
+  State<CustomerRegistrationPage> createState() =>
+      _CustomerRegistrationPageState();
 }
 
 class _CustomerRegistrationPageState extends State<CustomerRegistrationPage> {
@@ -83,7 +83,9 @@ class _CustomerRegistrationPageState extends State<CustomerRegistrationPage> {
         // Navigate to homepage
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const HomeScreen()),
+          MaterialPageRoute(
+            builder: (context) => const NavigationMenu(),
+          ),
         );
       }
     } on FirebaseAuthException catch (e) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DriverRegisterScreen3 extends StatelessWidget {
+class DriverRegisterScreen4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,34 +11,28 @@ class DriverRegisterScreen3 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              'Your Personal Details',
+              'Your Vehicle Details',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),
             TextField(
-              decoration: InputDecoration(labelText: 'Full Time or Part Time'),
+              decoration: InputDecoration(labelText: 'Vehicle Model'),
             ),
             TextField(
-              decoration: InputDecoration(labelText: 'Working District'),
+              decoration: InputDecoration(labelText: 'Vehicle Capacity'),
             ),
             TextField(
-              decoration: InputDecoration(labelText: 'NIC Number'),
-            ),
-            TextField(
-              decoration: InputDecoration(labelText: 'Front of your NIC or Driver License'),
-            ),
-            TextField(
-              decoration: InputDecoration(labelText: 'Back of your NIC or Driver License'),
+              decoration: InputDecoration(labelText: 'Max Load'),
             ),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {},
               child: Text('Next'),
             ),
-            // TextButton(
-            //   onPressed: () {},
-            //   child: Text('Already have an account? Login Now'),
-            // ),
+            TextButton(
+              onPressed: () {},
+              child: Text('Already have an account? Login Now'),
+            ),
           ],
         ),
       ),
