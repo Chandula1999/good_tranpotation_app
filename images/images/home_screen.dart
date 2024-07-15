@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:good_tranpotation_app/screens/Home%20page/App%20Bar/appbar.dart';
-import 'package:good_tranpotation_app/screens/Home%20page/trip_details.dart';
-import 'package:good_tranpotation_app/screens/Home%20page/widgets/ccurve%20edges/primary_header_container.dart';
-import 'package:good_tranpotation_app/screens/Home%20page/widgets/select_category_card.dart';
+import 'package:good_tranpotation_app/screens/Customer/Home%20page/App%20Bar/appbar.dart';
+import 'package:good_tranpotation_app/screens/Customer/Home%20page/trip_details.dart';
+import 'package:good_tranpotation_app/screens/Customer/Home%20page/widgets/ccurve%20edges/primary_header_container.dart';
+import 'package:good_tranpotation_app/screens/Customer/Home%20page/widgets/select_category_card.dart';
 import 'package:good_tranpotation_app/utils/colors.dart';
 import 'package:good_tranpotation_app/widgets/button_3.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:good_tranpotation_app/screens/Profile%20page/view_profile.dart'; // Import the ProfileDetailScreen
+import 'package:good_tranpotation_app/screens/Customer/Profile%20page/view_profile.dart';// Import the ProfileDetailScreen
 
 class ProfileScreen extends StatelessWidget {
   @override

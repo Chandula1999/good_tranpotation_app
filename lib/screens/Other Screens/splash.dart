@@ -1,6 +1,6 @@
 // splash.dart file
 import 'package:flutter/material.dart';
-import 'package:good_tranpotation_app/screens/users_selection_screen.dart';
+import 'package:good_tranpotation_app/screens/Other%20Screens/users_selection_screen.dart';
 import 'package:good_tranpotation_app/utils/colors.dart';
 import 'package:good_tranpotation_app/utils/description.dart';
 

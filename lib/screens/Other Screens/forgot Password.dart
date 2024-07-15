@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:good_tranpotation_app/screens/otp_verification.dart';
+import 'package:good_tranpotation_app/screens/Other%20Screens/otp_verification.dart';
 import 'package:good_tranpotation_app/utils/colors.dart';
 import 'package:good_tranpotation_app/widgets/back_arrow_button.dart';
 import 'package:good_tranpotation_app/widgets/button.dart';

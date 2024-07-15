@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:good_tranpotation_app/screens/Home%20page/Trip%20Details/Map/map.dart';
-import 'package:good_tranpotation_app/screens/Home%20page/Trip%20Details/goods_category_dropdown.dart';
-import 'package:good_tranpotation_app/screens/Home%20page/Trip%20Details/vehicleDropdown.dart';
-import 'package:good_tranpotation_app/screens/Home%20page/Trip%20Details/weight_range_dropdown.dart';
+import 'package:good_tranpotation_app/screens/Customer/Home%20page/Trip%20Details/Map/map.dart';
+import 'package:good_tranpotation_app/screens/Customer/Home%20page/Trip%20Details/goods_category_dropdown.dart';
+import 'package:good_tranpotation_app/screens/Customer/Home%20page/Trip%20Details/vehicleDropdown.dart';
+import 'package:good_tranpotation_app/screens/Customer/Home%20page/Trip%20Details/weight_range_dropdown.dart';
 import 'package:good_tranpotation_app/widgets/button_3.dart';
 
 class TripDetails extends StatelessWidget {

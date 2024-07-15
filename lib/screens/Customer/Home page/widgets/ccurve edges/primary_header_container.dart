@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:good_tranpotation_app/screens/Home%20page/widgets/ccurve%20edges/circular_container.dart';
-import 'package:good_tranpotation_app/screens/Home%20page/widgets/ccurve%20edges/curveEdgeWidget.dart';
+import 'package:good_tranpotation_app/screens/Customer/Home%20page/widgets/ccurve%20edges/circular_container.dart';
+import 'package:good_tranpotation_app/screens/Customer/Home%20page/widgets/ccurve%20edges/curveEdgeWidget.dart';
 import 'package:good_tranpotation_app/utils/colors.dart';
 
 class PrimaryHeaderContainer extends StatelessWidget {

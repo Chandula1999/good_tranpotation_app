@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:good_tranpotation_app/screens/Customer/customer_signin.dart';
-import 'package:good_tranpotation_app/screens/Home%20page/home_screen.dart';
+import 'package:good_tranpotation_app/screens/Customer/Home%20page/home_screen.dart';
 import 'package:good_tranpotation_app/utils/colors.dart';
 import 'package:good_tranpotation_app/widgets/back_arrow_button.dart';
 import 'package:good_tranpotation_app/widgets/button.dart';

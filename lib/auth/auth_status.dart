@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 // import 'package:good_tranpotation_app/screens/Customer/customer_signin.dart';
-import 'package:good_tranpotation_app/screens/home_page.dart';
-import 'package:good_tranpotation_app/screens/splash.dart';
+import 'package:good_tranpotation_app/screens/Other%20Screens/home_page.dart';
+import 'package:good_tranpotation_app/screens/Other%20Screens/splash.dart';
 
 class AuthStatus extends StatelessWidget {
   const AuthStatus({super.key});

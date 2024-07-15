@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:good_tranpotation_app/screens/Activity%20page/activity_screen.dart';
-import 'package:good_tranpotation_app/screens/Home%20page/home_screen.dart';
-import 'package:good_tranpotation_app/screens/Notifications%20Page/notification.dart';
-import 'package:good_tranpotation_app/screens/Profile%20page/profileScreen.dart';
+import 'package:good_tranpotation_app/screens/Customer/Activity%20page/activity_screen.dart';
+import 'package:good_tranpotation_app/screens/Customer/Home%20page/home_screen.dart';
+import 'package:good_tranpotation_app/screens/Customer/Notifications%20Page/notification.dart';
+import 'package:good_tranpotation_app/screens/Customer/Profile%20page/profileScreen.dart';
 import 'package:iconsax/iconsax.dart';
 
 class NavigationMenu extends StatelessWidget {
