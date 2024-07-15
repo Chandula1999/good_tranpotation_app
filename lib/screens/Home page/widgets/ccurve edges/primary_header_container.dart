@@ -16,7 +16,7 @@ class PrimaryHeaderContainer extends StatelessWidget {
     return CurveEdgeWidget(
       child: Container(
         color: primary,
-        padding: const EdgeInsets.all(0),
+        padding: EdgeInsets.all(0),
         child: SizedBox(
           height: 200, // Reduced the height from 400 to 200
           child: Stack(
