@@ -1,13 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:good_tranpotation_app/screens/Customer/Home%20page/widgets/navigation_menu.dart';
-import 'package:good_tranpotation_app/screens/Customer/customer_signin.dart';
-import 'package:good_tranpotation_app/utils/colors.dart';
-import 'package:good_tranpotation_app/widgets/back_arrow_button.dart';
-import 'package:good_tranpotation_app/widgets/button.dart';
-import 'package:good_tranpotation_app/widgets/click_link.dart';
-import 'package:good_tranpotation_app/widgets/social_login.dart';
-import 'package:good_tranpotation_app/widgets/text_field.dart';
+import 'package:flutter/material.dart';
+import 'package:good_tranpotation_app/screens/Customer/Home%20page/home_screen.dart';
 
 class CustomerRegistrationPage extends StatefulWidget {
   const CustomerRegistrationPage({super.key});
@@ -77,6 +71,18 @@ class _CustomerRegistrationPageState extends State<CustomerRegistrationPage> {
         email: email,
         password: password,
       );
+
+      // Get the current user
+      User? user = FirebaseAuth.instance.currentUser;
+
+      // Add user data to Firestore collection
+      await FirebaseFirestore.instance.collection('users').doc(user?.uid).set({
+        'email': email,
+        'role': 'customer',
+
+        // Add other user data as needed
+      });
+
       if (mounted) {
         Navigator.pop(context);
 
@@ -84,108 +90,56 @@ class _CustomerRegistrationPageState extends State<CustomerRegistrationPage> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const NavigationMenu(),
+            builder: (context) => const HomeScreen(),
           ),
         );
       }
     } on FirebaseAuthException catch (e) {
       if (mounted) {
         Navigator.pop(context);
-        if (e.code == 'weak-password') {
-          showErrorMessage("The password provided is too weak.");
-        } else if (e.code == 'email-already-in-use') {
-          showErrorMessage("The account already exists for that email.");
-        } else {
-          showErrorMessage("An unexpected error occurred. Please try again.");
-        }
-      }
-    } catch (e) {
-      if (mounted) {
-        Navigator.pop(context);
-        showErrorMessage("An unexpected error occurred. Please try again.");
+        showErrorMessage(e.message ?? "An error occurred");
       }
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: backgroundColor2,
-        automaticallyImplyLeading: false,
-        leading: const AppBarBackButton(),
+        title: const Text("Customer Registration"),
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            colors: [
-              backgroundColor2,
-              backgroundColor3,
-              backgroundColor4,
-            ],
-          ),
-        ),
-        height: double.infinity,
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                "Welcome Aboard!",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 37,
-                  color: textColor1,
-                ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            TextField(
+              controller: emailController,
+              decoration: const InputDecoration(
+                labelText: "Email",
               ),
-              SizedBox(height: size.height * 0.01),
-              Text(
-                "Let's get you set up",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 27,
-                  color: textColor2,
-                  height: 1.2,
-                ),
+            ),
+            const SizedBox(height: 16.0),
+            TextField(
+              controller: passwordController,
+              obscureText: true,
+              decoration: const InputDecoration(
+                labelText: "Password",
               ),
-              SizedBox(height: size.height * 0.04),
-              MyTextField(
-                controller: emailController,
-                hint: "Email",
-                obscureText: false,
+            ),
+            const SizedBox(height: 16.0),
+            TextField(
+              controller: confirmPasswordController,
+              obscureText: true,
+              decoration: const InputDecoration(
+                labelText: "Confirm Password",
               ),
-              SizedBox(height: size.height * 0.01),
-              MyTextField(
-                controller: passwordController,
-                hint: "Password",
-                obscureText: true,
-              ),
-              SizedBox(height: size.height * 0.01),
-              MyTextField(
-                controller: confirmPasswordController,
-                hint: "Confirm Password",
-                obscureText: true,
-              ),
-              SizedBox(height: size.height * 0.02),
-              CustomButton(
-                buttonText: "Register",
-                buttonColor: buttonColor,
-                onTap: registerUser,
-              ),
-              SizedBox(height: size.height * 0.06),
-              const SocialLogin(),
-              SizedBox(height: size.height * 0.06),
-              const ClickableLink(
-                prefixText: "Already have an account? ",
-                linkText: "Sign in",
-                destination: CustomerSignIn(),
-              ),
-            ],
-          ),
+            ),
+            const SizedBox(height: 16.0),
+            ElevatedButton(
+              onPressed: registerUser,
+              child: const Text("Register"),
+            ),
+          ],
         ),
       ),
     );
