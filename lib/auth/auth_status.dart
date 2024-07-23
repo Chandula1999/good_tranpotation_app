@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:good_tranpotation_app/auth/user-role.dart';
 // import 'package:good_tranpotation_app/screens/Customer/customer_signin.dart';
-import 'package:good_tranpotation_app/screens/Other%20Screens/home_page.dart';
 import 'package:good_tranpotation_app/screens/Other%20Screens/splash.dart';
 
 class AuthStatus extends StatelessWidget {
@@ -18,7 +18,7 @@ class AuthStatus extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           } else if (snapshot.hasData) {
-            return const HomePage();
+            return  const UserRole();
           } else if (snapshot.hasError) {
             return const Center(
               child: Text('Something went wrong!'),
