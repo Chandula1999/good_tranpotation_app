@@ -3,7 +3,7 @@ class User {
   final String name;
   final String email;
   final String phoneNumber;
-  final String userType;
+  final String role;
   // final Map<String, String> address;
   final List<int> ratings;
   final double averageRating;
@@ -13,7 +13,7 @@ class User {
     required this.name,
     required this.email,
     required this.phoneNumber,
-    required this.userType,
+    required this.role,
     // required this.address,
     this.ratings = const [],
     this.averageRating = 0.0,
@@ -26,7 +26,7 @@ class User {
       'name': name,
       'email': email,
       'phoneNumber': phoneNumber,
-      'userType': userType,
+      'role': role,
       // 'address': address,
       'ratings': ratings,
       'averageRating': averageRating,
@@ -40,7 +40,7 @@ class User {
       name: map['name'],
       email: map['email'],
       phoneNumber: map['phoneNumber'],
-      userType: map['userType'],
+      role: map['role'],
       // address: Map<String, String>.from(map['address']),
       ratings: List<int>.from(map['ratings']),
       averageRating: map['averageRating'].toDouble(),
