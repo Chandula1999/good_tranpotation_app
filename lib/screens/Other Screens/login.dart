@@ -1,24 +1,23 @@
-import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:good_tranpotation_app/screens/Driver/driver_registration.dart';
+import 'package:flutter/material.dart';
+import 'package:good_tranpotation_app/auth/user-role.dart';
+import 'package:good_tranpotation_app/screens/Customer/customer_register.dart';
 import 'package:good_tranpotation_app/screens/Other%20Screens/forgot%20Password.dart';
 import 'package:good_tranpotation_app/utils/colors.dart';
 import 'package:good_tranpotation_app/widgets/back_arrow_button.dart';
 import 'package:good_tranpotation_app/widgets/button.dart';
 import 'package:good_tranpotation_app/widgets/click_link.dart';
 import 'package:good_tranpotation_app/widgets/social_login.dart';
-import 'package:good_tranpotation_app/widgets/text_field.dart';
+import 'package:good_tranpotation_app/widgets/text_field.dart'; // Import the homepage
 
-import '../Other Screens/home_page.dart'; // HomePage Dart file
-
-class DriverSignIn extends StatefulWidget {
-  const DriverSignIn({super.key});
+class SignIn extends StatefulWidget {
+  const SignIn({super.key});
 
   @override
-  State<DriverSignIn> createState() => _DriverSignInState();
+  State<SignIn> createState() => _CustomerSignInState();
 }
 
-class _DriverSignInState extends State<DriverSignIn> {
+class _CustomerSignInState extends State<SignIn> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -41,7 +40,7 @@ class _DriverSignInState extends State<DriverSignIn> {
     }
   }
 
-  void signDriverIn() async {
+  void signUserIn() async {
     final email = emailController.text.trim();
     final password = passwordController.text.trim();
 
@@ -73,9 +72,11 @@ class _DriverSignInState extends State<DriverSignIn> {
       );
       if (mounted) {
         Navigator.pop(context);
+
+        // Navigate to homepage
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const HomePage()),
+          MaterialPageRoute(builder: (context) => const UserRole(),),
         );
       }
     } on FirebaseAuthException catch (e) {
@@ -84,15 +85,17 @@ class _DriverSignInState extends State<DriverSignIn> {
         if (e.code == 'invalid-credential') {
           showErrorMessage("Invalid email or password. Please try again.");
         } else if (e.code == 'user-not-found') {
-          showErrorMessage("No driver found with this email.");
+          showErrorMessage("No user found with this email.");
         } else {
           showErrorMessage("An unexpected error occurred. Please try again.");
+          // print('FirebaseAuthException: ${e.code} - ${e.message}');
         }
       }
     } catch (e) {
       if (mounted) {
         Navigator.pop(context);
         showErrorMessage("An unexpected error occurred. Please try again.");
+        // print('Exception: $e');
       }
     }
   }
@@ -120,12 +123,14 @@ class _DriverSignInState extends State<DriverSignIn> {
         ),
         height: double.infinity,
         child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 10,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Hello Driver!",
+                "Hello Customer!",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 37,
@@ -134,7 +139,7 @@ class _DriverSignInState extends State<DriverSignIn> {
               ),
               SizedBox(height: size.height * 0.01),
               Text(
-                "Welcome back, you've been missed!",
+                "Welcome back, you've\nbeen missed!",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 27,
@@ -145,7 +150,7 @@ class _DriverSignInState extends State<DriverSignIn> {
               SizedBox(height: size.height * 0.04),
               MyTextField(
                 controller: emailController,
-                hint: "Enter Email",
+                hint: "Email",
                 obscureText: false,
               ),
               SizedBox(height: size.height * 0.01),
@@ -179,18 +184,16 @@ class _DriverSignInState extends State<DriverSignIn> {
               ),
               SizedBox(height: size.height * 0.02),
               CustomButton(
-                buttonText: "Sign In",
-                buttonColor: buttonColor,
-                onTap: signDriverIn,
-              ),
+                  buttonText: "Sign In",
+                  buttonColor: buttonColor,
+                  onTap: signUserIn),
               SizedBox(height: size.height * 0.06),
               const SocialLogin(),
               SizedBox(height: size.height * 0.06),
               const ClickableLink(
-                prefixText: "Not a member? ",
-                linkText: "Register now",
-                destination: DriverRegistration(),
-              ),
+                  prefixText: "Not a member? ",
+                  linkText: "Register now",
+                  destination: CustomerRegistrationPage())
             ],
           ),
         ),
