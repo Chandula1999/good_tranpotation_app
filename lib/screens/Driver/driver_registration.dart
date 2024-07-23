@@ -1,13 +1,17 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:good_tranpotation_app/screens/Driver/driver_details_sc1.dart';
-import 'package:good_tranpotation_app/screens/Driver/driver_signin.dart';
+import 'package:good_tranpotation_app/screens/Other%20Screens/login.dart';
+import 'package:good_tranpotation_app/services/user_service.dart';
 import 'package:good_tranpotation_app/utils/colors.dart';
 import 'package:good_tranpotation_app/widgets/back_arrow_button.dart';
 import 'package:good_tranpotation_app/widgets/button.dart';
 import 'package:good_tranpotation_app/widgets/click_link.dart';
 import 'package:good_tranpotation_app/widgets/social_login.dart';
-import 'package:good_tranpotation_app/widgets/text_field.dart'; // Assuming this is a custom text field widget
+import 'package:good_tranpotation_app/widgets/text_field.dart';
+import 'package:good_tranpotation_app/models/user_model.dart'
+    as userModel; // Assuming this is a custom text field widget
 
 class DriverRegistration extends StatefulWidget {
   const DriverRegistration({super.key});
@@ -76,6 +80,29 @@ class _DriverRegistrationState extends State<DriverRegistration> {
         email: email,
         password: password,
       );
+
+      // Get the current user
+      final user = FirebaseAuth.instance.currentUser;
+
+      // Create a UserModel object with the user data
+      final newUser = userModel.User(
+        userId: user!.uid,
+        name: '', // Set the name to an empty string or a default value
+        email: email,
+        phoneNumber:
+            '', // Set the phone number to an empty string or a default value
+        role: 'driver',
+        ratings: [], // Set the ratings to an empty list or a default value
+        averageRating: 0.0, // Set the average rating to 0.0 or a default value
+      );
+
+      // Use your UserService for interaction
+      final userService =
+          UserService(FirebaseFirestore.instance.collection('users'));
+
+      // Add the user to the Firestore users collection
+      await userService.addUser(newUser);
+
       if (mounted) {
         Navigator.pop(context);
         // Navigate to Driver Details Screen
@@ -90,15 +117,10 @@ class _DriverRegistrationState extends State<DriverRegistration> {
         if (e.code == 'weak-password') {
           showErrorMessage("The password provided is too weak.");
         } else if (e.code == 'email-already-in-use') {
-          showErrorMessage("The account already exists for that email.");
+          showErrorMessage("The email address is already in use.");
         } else {
-          showErrorMessage("An unexpected error occurred. Please try again.");
+          showErrorMessage("An error occurred during registration.");
         }
-      }
-    } catch (e) {
-      if (mounted) {
-        Navigator.pop(context);
-        showErrorMessage("An unexpected error occurred. Please try again.");
       }
     }
   }
@@ -187,7 +209,7 @@ class _DriverRegistrationState extends State<DriverRegistration> {
                     child: ClickableLink(
                       prefixText: "Already have an account? ",
                       linkText: "Sign in",
-                      destination: DriverSignIn(),
+                      destination: SignIn(),
                     ),
                   ),
                 ],
