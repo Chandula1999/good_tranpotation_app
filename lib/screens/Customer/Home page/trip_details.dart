@@ -80,10 +80,10 @@ class TripDetails extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            CustomButton_3(
-                buttonText: "Get Directions",
-                buttonColor: Colors.blue,
-                destination: LocationScreen())
+            // CustomButton_3(
+            //     buttonText: "Get Directions",
+            //     buttonColor: Colors.blue,
+            //     destination: LocationScreen())
           ],
         ),
       ),
