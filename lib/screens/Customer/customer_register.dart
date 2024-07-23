@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:good_tranpotation_app/screens/Customer/Home%20page/home_screen.dart';
+import 'package:good_tranpotation_app/models/user_model.dart' as userModel;
+import 'package:good_tranpotation_app/services/user_service.dart';
 
 class CustomerRegistrationPage extends StatefulWidget {
   const CustomerRegistrationPage({super.key});
@@ -73,19 +75,29 @@ class _CustomerRegistrationPageState extends State<CustomerRegistrationPage> {
       );
 
       // Get the current user
-      User? user = FirebaseAuth.instance.currentUser;
+      final user = FirebaseAuth.instance.currentUser;
 
-      // Add user data to Firestore collection
-      await FirebaseFirestore.instance.collection('users').doc(user?.uid).set({
-        'email': email,
-        'role': 'customer',
+      // Create a UserModel object with the user data
+      final newUser = userModel.User(
+        userId: user!.uid,
+        name: '', // Set the name to an empty string or a default value
+        email: email,
+        phoneNumber:
+            '', // Set the phone number to an empty string or a default value
+        role: 'customer',
+        ratings: [], // Set the ratings to an empty list or a default value
+        averageRating: 0.0, // Set the average rating to 0.0 or a default value
+      );
 
-        // Add other user data as needed
-      });
+      // Use your UserService for interaction
+      final userService =
+          UserService(FirebaseFirestore.instance.collection('users'));
+
+      // Add the user to the Firestore users collection
+      await userService.addUser(newUser);
 
       if (mounted) {
         Navigator.pop(context);
-
         // Navigate to homepage
         Navigator.pushReplacement(
           context,
